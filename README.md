@@ -13,7 +13,13 @@ Criar uma API em Python com acesso a banco de dados para otimizar o acesso a out
 * Escolher uma API pública (https://any-api.com/, ou qualquer outra, e **deve ser diferente dos demais grupos**);
 * Desenvolver uma função Python em AWS Lambda para:
   * disponibilizar uma API própria que consulta a API pública ou o banco de dados;
-  * permite a consulta do histórico de consultas armazenado;
+  * permitir a consulta ao histórico de consultas armazenado;
+  * realizar os seguintes passos de consulta a partir da solicitação do usuário: 
+    * consultar o banco de dados local;
+    * se não contiver o que foi solicitado:
+      * consultar a API pública;
+      * armazenar os dados consultados no banco de dados local;
+    * uma vez obtidos os dados, responder ao usuário;
 * Configurar um AWS API Gateway para invocar as funções no Lambda;
 * Armazenar as consultas em DynamoDB;
 * O grupo pode ficar livre quanto a outros recursos AWS adicionais a este, que entendam como úteis à solução;

@@ -37,11 +37,17 @@ O Projeto foi desenvolvido na plataforma da [AWS](https://aws.amazon.com/) com a
       * Entre na página [IAM políticas](https://aws.amazon.com/pt/iam/?nc2=type_a) escolha ```Criar política``` e na aba ```JSON``` escreva o código JSON.
 
       ```json
-      {
-
-
-
-      }
+        {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "VisualEditor0",
+                "Effect": "Allow",
+                "Action": "dynamodb:*",
+                "Resource": "*"
+            }
+        ]
+        }
       ```
       * Escolha ```Próximo: Tags``` e ```Próximo: Revisar```; 
       * Escolha o nome da política e coloque sua lambda;

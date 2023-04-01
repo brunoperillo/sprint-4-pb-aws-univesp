@@ -65,8 +65,8 @@ O Projeto foi desenvolvido na plataforma da [AWS](https://aws.amazon.com/) com a
  - #### REST API usando a API Gateway
     * ### Criar API
         * Entre na página da API Gateway e clique em `Criar API`;
-        * Entre as APIs escolha``API REST` e clique em construir; 
-        * Em configurações, escreva o nome da API e escolha o Endpoint Type e clique em``Criar API` 
+        * Entre as APIs escolha `API REST` e clique em construir; 
+        * Em configurações, escreva o nome da API e escolha o Endpoint Type e clique em `Criar API` 
 
     * ### Criar recurso
         * Abra a sua API e clique e na aba recursos, selecione no diretório `/consultacep` e no botão `Ações`  escolha o método GET e salve (✔ ).

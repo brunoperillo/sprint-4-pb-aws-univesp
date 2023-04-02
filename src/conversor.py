@@ -18,12 +18,12 @@ headers = {KEY1: VALUE1, KEY2: VALUE2}
 dynamo = boto3.resource('dynamodb').Table(tableName)
 
 # Insere os novos valores de cotação no banco
-def inserir_cotacao(id, emMoeda, paraMoeda, cotDolar, data):
+def inserir_cotacao(id, emMoeda, paraMoeda, cotacao, data):
     Item={
             'id': id,
             'emMoeda': emMoeda,
             'paraMoeda': paraMoeda,
-            'cotacao': cotDolar,
+            'cotacao': cotacao,
             'data': data
         }
     dynamo.put_item(Item=Item)
@@ -58,12 +58,18 @@ def handler(event, context):
     # Apaga a cotação informada
     def ddb_delete(x):
         dynamo.delete_item(**x)
+    
+    # listar os dados dados armazenados no banco de dados
+    def listar_dados(x):
+        response = dynamo.scan()
+        return response['Items']
 
     operation = event['operation']
 
     operations = {
         'read': ddb_read,
         'delete': ddb_delete,
+        'list': listar_dados,
     }
 
     if operation in operations:

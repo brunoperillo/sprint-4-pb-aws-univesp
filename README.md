@@ -106,7 +106,7 @@ O Projeto foi desenvolvido na plataforma da [AWS](https://aws.amazon.com/) com a
 
         `https://0wr6ic76da.execute-api.us-east-1.amazonaws.com/cep/consultacep?cep={cep}`
 
-        * Este teste também pode ser realizado utilizando o software [Postman](https://www.postman.com/) da seguinte forma: adicione a `URL` com ona imagem abaixo, utilizando o método `GET`.
+        * Este teste também pode ser realizado utilizando o software [Postman](https://www.postman.com/) da seguinte forma: adicione a `URL` como na imagem abaixo, utilizando o método `GET`.
         ![Arquitetura](readme-images/postman.PNG)
 
 - ## Dificuldades apresentadas

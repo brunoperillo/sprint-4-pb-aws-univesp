@@ -33,10 +33,8 @@ Assim elimina as tarefas de gerenciamento de servidores e transfere as responsab
 <div>
 
  </div>
- 
-![imagem2](https://user-images.githubusercontent.com/88354075/229376111-7c08200c-efb0-48a1-91b1-e31cb60e341f.png)
 
-
+![funcaoLambda](https://user-images.githubusercontent.com/88354075/229517193-52064606-d7ef-4699-b984-de8bc4490bfc.png)
 
 <div> 
 

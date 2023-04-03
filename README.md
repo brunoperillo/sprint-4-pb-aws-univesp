@@ -33,8 +33,10 @@ Assim elimina as tarefas de gerenciamento de servidores e transfere as responsab
 <div>
 
  </div>
+ 
+![imagem2](https://user-images.githubusercontent.com/88354075/229376111-7c08200c-efb0-48a1-91b1-e31cb60e341f.png)
 
-![eventoLambda](https://user-images.githubusercontent.com/88354075/229350680-7f873fa7-7057-4286-90f1-4a49c75580aa.png)
+
 
 <div> 
 
@@ -58,6 +60,7 @@ O Lambda executa o código em uma infraestrutura de computação de alta disponi
 O projeto desenvolvido iniciou com o arquivo em HTML para disponibilizar a consulta na API. 
 
 Utilizamos a [API- Places](https://developers.google.com/maps/documentation/places/web-service?hl=pt-br) para fazer chamadas de API HTTP. 
+
 O AWS API Gateway hospeda as solicitações e as respostas aos clientes.
 
 Como a função Lambda contém a lógica de negócios para processar as chamadas de API recebida, e usa o S3 como um armazenamento. 
@@ -67,13 +70,16 @@ Na sequência, o upload do código para AWS através da Lambda para invocação 
 
 E para compartilhar entre o grupo foi criado subcontas para que todos pudessem acessar a funçao em Lambda. 
 
-E para otimizar o tempo de execução do código foi escolhido o tamanho de mémoria ideal para a função.Também foi habilitado a simultaniedade provionada para manter as funções inicializadas e prontas para responder em questões de poucos milissegundos. 
+E para otimizar o tempo de execução do código foi escolhido o tamanho de mémoria ideal para a função.
+Também foi habilitado a simultaniedade provicionada para manter as funções inicializadas e prontas para responder em questões de poucos milissegundos. 
 
+Prototipo versão  1.0
 <div>
 
  </div>
 
-![imagem2](https://user-images.githubusercontent.com/88354075/229376111-7c08200c-efb0-48a1-91b1-e31cb60e341f.png)
+
+![image (2)](https://user-images.githubusercontent.com/88354075/229509227-265d4429-ffa1-421e-87d8-89617e557eb3.png)
 
 <div> 
 

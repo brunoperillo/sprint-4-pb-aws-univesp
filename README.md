@@ -21,7 +21,7 @@ As APIs são um conjunto de padrões que fazem parte de uma interface. As APIs p
 
 ## Execução do Projeto
 
-Foi criada uma API para consultar o banco de dados AWS DynamoDB em busca da cotação de moedas, caso não seja possível encontrar a informação no banco a API faz a requisição da cotação na API Forex (https://rapidapi.com/pt/principalapis/api/currency-conversion-and-exchange-rates/) e salva a informação no DynamoDB
+Foi criada uma API (https://tvi6zcivij.execute-api.us-east-1.amazonaws.com/prod/dolarreal) para consultar o banco de dados AWS DynamoDB em busca da cotação de moedas, caso não seja possível encontrar a informação no banco a API faz a requisição da cotação na API Forex (https://rapidapi.com/pt/principalapis/api/currency-conversion-and-exchange-rates/) e salva a informação no DynamoDB, para futuras requisições sem a necessidade de consultar a API novamente
 
 ## Técnicas e tecnologias utilizadas
 

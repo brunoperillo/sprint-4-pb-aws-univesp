@@ -91,7 +91,7 @@ O Projeto foi desenvolvido na plataforma da [AWS](https://aws.amazon.com/) com a
         * Localize a sua API Gateway e na coluna Recursos, escolha o método `GET` e no painel de execução, na caixa cliente e escolha `Testar`;
         * No campo de texto digite o CEP com 8 dígitos, no formato `cep=12345678`
         e clique em `testar`, veja o resultado e depois vá até sua tabela do DynomoDB e veja se está funcionando;
->>>>>>> 3acfeaa2b46be3a3899b64f8385c430e54737804
+
         
               
                

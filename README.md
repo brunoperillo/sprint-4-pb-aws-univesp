@@ -127,9 +127,9 @@ Para reproduzir este projeto utilizando os código aqui apresentados, no ambient
 
 ### Dificuldades conhecidas:
 
-* Familiadade com os recursos da AWS e a necessidade de coordenação de diversos serviços para que a API funcione.
+* Familiaridade com os recursos da AWS e a necessidade de coordenação de diversos serviços para que a API funcione.
 
-* Dificuldade de utilizar o S3 para prover recursos estáticos (página da API).
+* Dificuldade de utilizar o S3 para prover recursos estáticos (página da API e integração entre o *back-end* da função Lambda e o *front-end* HTML armazenado no S3).
 
 
 *******

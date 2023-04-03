@@ -4,50 +4,34 @@ Avaliação da quarta sprint do programa de bolsas Compass UOL para formação e
 
 ***
 
-## Execução (Código Fonte)
+# Grupo-3
 
-Criar uma API em Python com acesso a banco de dados para otimizar o acesso a outra API pública.
+- [Bernardo Lima](https://github.com/belima93)
+- [Bruno Perillo](https://github.com/brunoperillo)
+- [Diego Lopes](https://github.com/Diegox0301)
+- [Luiz Renato Sassi](https://github.com/luizrsassi)
 
-**Especificações**:
+## Objetivo
 
-* Escolher uma API pública (https://any-api.com/, ou qualquer outra, e **deve ser diferente dos demais grupos**);
-* Desenvolver uma função Python em AWS Lambda para:
-  * disponibilizar uma API própria que consulta a API pública ou o banco de dados;
-  * permite a consulta do histórico de consultas armazenado;
-* Configurar um AWS API Gateway para invocar as funções no Lambda;
-* Armazenar as consultas em DynamoDB;
-* O grupo pode ficar livre quanto a outros recursos AWS adicionais a este, que entendam como úteis à solução;
-* Referência de como executar: [Tutorial: Using Lambda with API Gateway](https://docs.aws.amazon.com/lambda/latest/dg/services-apigateway-tutorial.html).
+Criar uma API para consultar um banco de dados, caso não haja informação no banco de dados, consultar uma API publica 
 
+## Introdução
 
+As APIs são um conjunto de padrões que fazem parte de uma interface. As APIs permitem a criação de plataformas de maneira mais simples e prática para desenvolvedores. A partir de APIs, é possível criar softwares, aplicativos, programas e plataformas diversas. Por exemplo, apps desenvolvidos para celulares Android e iPhone (iOS) são criados a partir de padrões definidos e disponibilizados pelas APIs de cada sistema operacional.
 
-***
+## Execução do Projeto
 
-## O que será avaliado?
+Foi criada uma API para consultar o banco de dados AWS DynamoDB em busca da cotação de moedas, caso não seja possível encontrar a informação no banco a API faz a requisição da cotação na API Forex (https://rapidapi.com/pt/principalapis/api/currency-conversion-and-exchange-rates/) e salva a informação no DynamoDB
 
-- Projeto em produção na AWS
-- Arquivos de configuração utilizados
-- Código Python desenvolvido
-- Forma de publicação de códigos no git ao longo do desenvolvimento
-- Organização geral do código fonte
-  - Estrutura de pastas
-  - Estrutura da lógica de negócio
-  - Divisão de responsabilidades em arquivos/pastas distintos
-  - Otimização do código fonte (evitar duplicações de código)
-- Objetividade do README.md
-- Modelo de organização da equipe para o desenvolvimento do projeto
+## Técnicas e tecnologias utilizadas
 
-***
+*	Visual Studio
+*	Python
+*	AWS DynamoDB
+*	AWS Lambda
+*	Postman
 
-## Entrega
+## Dificuldades conhecidas
 
-- Aceitar o convite do repositório da sprint-4-pb-aws-univesp
-- **O trabalho deve ser feito em grupos de três ou quatro pessoas**
-  - Não repetir formação de grupos já criados em sprints anteriores
-- Criar uma branch no repositório com o formato grupo-número (Exemplo: grupo-1)
-- Subir o trabalho na branch com um README.md
-  - documentar detalhes sobre como a avaliação foi desenvolvida
-  - dificuldades conhecidas
-  - como utilizar o sistema
-  - 🔨 código fonte desenvolvido (Sugestão: pasta `src`)
-- O prazo de entrega é até às 12h do dia 03/04/2023 no repositório do github ([https://github.com/Compass-pb-aws-2023-Univesp/sprint-4-pb-aws-univesp](https://github.com/Compass-pb-aws-2023-Univesp/sprint-4-pb-aws-univesp)).
+* A pouca familiaridade com o ambiente da AWS Lambda e compreendimento das especificações necessárias para o uso correto.
+

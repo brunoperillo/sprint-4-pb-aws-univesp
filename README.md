@@ -1,59 +1,59 @@
 # Avaliação Sprint 4 - Programa de Bolsas Compass UOL / AWS e Univesp
 
-Avaliação da quarta sprint do programa de bolsas Compass UOL para formação em machine learning para AWS.
+Avaliação da quarta sprint do programa de bolsas Compass UOL para formação em machine learning para [AWS][aws].
+A aplicação pode ser acessada clicando [aqui][aqui].
+***
+
+## Equipe
+- **Irati Gonçalves Maffra**
+- Adila Mota
+- Marcos Zaparolli
+- Viviane Alves
+
+## Objetivo
+Diponibilizar uma API própria que consome dados de uma API pública e retornar uma resposta ao usuário, sendo essa resposta armazenada no DynamoDB.
 
 ***
 
 ## Execução (Código Fonte)
+##
 
-Criar uma API em Python com acesso a banco de dados para otimizar o acesso a outra API pública.
+**Criação da API**
 
-**Especificações**:
-
-* Escolher uma API pública (https://any-api.com/, ou qualquer outra, e **deve ser diferente dos demais grupos**);
-* Desenvolver uma função Python em AWS Lambda para:
-  * disponibilizar uma API própria que consulta a API pública ou o banco de dados;
-  * permitir a consulta ao histórico de consultas armazenado;
-  * realizar os seguintes passos de consulta a partir da solicitação do usuário: 
-    * consultar o banco de dados local;
-    * se não contiver o que foi solicitado:
-      * consultar a API pública;
-      * armazenar os dados consultados no banco de dados local;
-    * uma vez obtidos os dados, responder ao usuário;
-* Configurar um AWS API Gateway para invocar as funções no Lambda;
-* Armazenar as consultas em DynamoDB;
-* O grupo pode ficar livre quanto a outros recursos AWS adicionais a este, que entendam como úteis à solução;
-* Referência de como executar: [Tutorial: Using Lambda with API Gateway](https://docs.aws.amazon.com/lambda/latest/dg/services-apigateway-tutorial.html).
-
-
-
+Acesse o [CONSOLE][console] da AWS em serviços API Gateway, criar API e selecione a opção REST API para criar uma API pública. A API criada utilizando Python, consome os dados da API pública: https://api.pexels.com/v1/search
 ***
 
-## O que será avaliado?
+**Função Banco-Imagem**
+Acesse o console da AWS em serviços Lambda, funções, criar função, defina um nome dentro da regra e selecione a linguagem Python.
+https://github.com/Compass-pb-aws-2023-Univesp/sprint-4-pb-aws-univesp/tree/grupo-2/src/banco-imagem.py
+Insira uma politica de permissão para acesso a S3.
+```
+https://us-east-1.console.aws.amazon.com/iam/home#/policies/arn:aws:iam::281498278862:policy/service-role/AWSLambdaLambdaFunctionDestinationExecutionRole-43571431-ac98-4ba6-b01d-73930fcb9ca2
+```
 
-- Projeto em produção na AWS
-- Arquivos de configuração utilizados
-- Código Python desenvolvido
-- Forma de publicação de códigos no git ao longo do desenvolvimento
-- Organização geral do código fonte
-  - Estrutura de pastas
-  - Estrutura da lógica de negócio
-  - Divisão de responsabilidades em arquivos/pastas distintos
-  - Otimização do código fonte (evitar duplicações de código)
-- Objetividade do README.md
-- Modelo de organização da equipe para o desenvolvimento do projeto
+**Função Sprint-4**
+Acesse o console da AWS em serviços Lambda, funções, criar função, defina um nome dentro da regra e selecione a linguagem Python.
+https://github.com/Compass-pb-aws-2023-Univesp/sprint-4-pb-aws-univesp/tree/grupo-2/src/Sprint-4.py
+Insira uma politica de permissão para acesso a S3.
+```
+https://us-east-1.console.aws.amazon.com/iam/home#/policies/arn:aws:iam::281498278862:policy/service-role/AWSLambdaLambdaFunctionDestinationExecutionRole-0e5d10dc-9be1-415f-bca5-1950c020ab69
+```
 
-***
+**Criação dos Buckets**
+Acesse o console da AWS em serviços S3, Buckets, criar buckets, crie o nome de origem e seleciona a zona de disponibilidade utilizada no projeto. Repita os passos para criar o bucket de destino.
+```
+arn:aws:s3:::sprint-4-origem
+arn:aws:s3:::sprint-4-destino
+```
+**Criação do Banco de Imagens**
+Acesse o console da AWS em serviços DynamoDB, Tabelas, criar tabela, defina o nome e a chave de partição.
+https://us-east-1.console.aws.amazon.com/dynamodbv2/home?region=us-east-1#tables
 
-## Entrega
+**Criação interação com usuário**
+Utilizando JavaScript criado uma caixa de dialogo para busca de imagem, o usuário digita o nome da imagem e o código traz essa imagem da API pública do projeto e salva no banco de imagens criado no DynamoDB.
 
-- Aceitar o convite do repositório da sprint-4-pb-aws-univesp
-- **O trabalho deve ser feito em grupos de três ou quatro pessoas**
-  - Não repetir formação de grupos já criados em sprints anteriores
-- Criar uma branch no repositório com o formato grupo-número (Exemplo: grupo-1)
-- Subir o trabalho na branch com um README.md
-  - documentar detalhes sobre como a avaliação foi desenvolvida
-  - dificuldades conhecidas
-  - como utilizar o sistema
-  - 🔨 código fonte desenvolvido (Sugestão: pasta `src`)
-- O prazo de entrega é até às 12h do dia 03/04/2023 no repositório do github ([https://github.com/Compass-pb-aws-2023-Univesp/sprint-4-pb-aws-univesp](https://github.com/Compass-pb-aws-2023-Univesp/sprint-4-pb-aws-univesp)).
+
+
+[aws]: <https://aws.amazon.com/pt/>
+[aqui]: <http://127.0.0.1:5500/src/prompt.html>
+[aws]: <https://aws.amazon.com/console>

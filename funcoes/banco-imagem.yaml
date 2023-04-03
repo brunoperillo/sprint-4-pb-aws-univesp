@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: banco-imagem-dynamodb
+Resources:
+  bancoimagem:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.9
+      CodeUri: .
+      Description: banco-imagem-dynamodb
+      MemorySize: 128
+      Timeout: 15
+      Role: 'arn:aws:iam::281498278862:role/service-role/banco-imagem-role-rfwwf4x6'
+      Environment:
+        Variables:
+          table_name: imagens
+      RuntimePolicy:
+        UpdateRuntimeOn: Auto

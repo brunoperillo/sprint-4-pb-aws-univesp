@@ -1,0 +1,74 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2023-04-03T01:05:13Z",
+    "title" : "Sprint-4-API"
+  },
+  "host" : "2az2i095hl.execute-api.us-east-1.amazonaws.com",
+  "basePath" : "/dev",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "GET",
+          "uri" : "https://www.api.pexels.com/v1/search",
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
+            }
+          },
+          "passthroughBehavior" : "when_no_match",
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "http_proxy"
+        }
+      }
+    },
+    "/banco-imagem" : {
+      "x-amazon-apigateway-any-method" : {
+        "responses" : {
+          "200" : {
+            "description" : "200 response"
+          }
+        },
+        "security" : [ {
+          "sigv4" : [ ]
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:281498278862:function:banco-imagem/invocations",
+          "responses" : {
+            ".*" : {
+              "statusCode" : "200"
+            }
+          },
+          "passthroughBehavior" : "when_no_match",
+          "type" : "aws_proxy"
+        }
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "sigv4" : {
+      "type" : "apiKey",
+      "name" : "Authorization",
+      "in" : "header",
+      "x-amazon-apigateway-authtype" : "awsSigv4"
+    }
+  },
+  "definitions" : {
+    "Empty" : {
+      "type" : "object",
+      "title" : "Empty Schema"
+    }
+  }
+}

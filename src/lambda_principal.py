@@ -11,28 +11,57 @@ dynamodbTableName = 'Locais'
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table(dynamodbTableName)
 
+s3 = boto3.client('s3')
+
 
 getMethod = 'GET'
 postMethod = 'POST'
-""" postMethod = 'POST'
-patchMethod = 'PATCH'
-deleteMethod = 'DELETE' """
 statusPath = '/status'
+testPath = '/test'
 rootPath = '/'
 
 
 def lambda_handler(event, contest):
-
+    """
+    Função principal que é acionada pelo AWS Lambda.
+    
+    Args:
+    - event: dict contendo as informações sobre a requisição HTTP recebida.
+    - context: objeto do tipo LambdaContext que fornece informações sobre o ambiente de execução.
+    
+    Returns:
+    - response: dict contendo o status code HTTP, os headers da resposta e o body.
+    """
+    
     logger.info(event)
     httpMethod = event['httpMethod']
     path = event['path']
 
     if httpMethod == getMethod and path == statusPath:
-        #response = buildResponse(200)
-        response = buildResponse(200, 'A API está online')
+         response = buildResponse(200, 'A API está online')
     elif httpMethod == getMethod and path == rootPath:
         #response = buildResponse(200, 'Você está na raiz.')
         response = getLocalidade(event['queryStringParameters']['localidade'])
+    elif httpMethod == getMethod and path == testPath:
+        #response = buildResponse(200, 'Rota para testes.')
+        
+        # Recupera o objeto do S3
+        s3_response = s3.get_object(Bucket='sprint3-arquivos', Key='index.html')
+        html_content = s3_response['Body'].read().decode('utf-8')
+
+        # Constrói a resposta HTTP
+        response = {
+            'statusCode': 200,
+            'headers': {
+                'Content-Type': 'text/html',
+                'Access-Control-Allow-Origin': '*'
+            },
+            'body': html_content
+        }
+    
+    elif httpMethod == postMethod and path == testPath:
+        print('Teste post')
+        
     else:
         response = buildResponse(404, 'Página não encontrada.')
 
@@ -40,6 +69,16 @@ def lambda_handler(event, contest):
 
 
 def getLocalidade(localidade):
+    """
+    Busca a localidade na tabela do DynamoDB. Se não encontrada, faz uma pesquisa na API externa e salva o resultado na tabela.
+
+    Args:
+    - localidade: string contendo o nome da localidade a ser buscada.
+
+    Returns:
+    - response: dict contendo o status code HTTP, os headers da resposta e o body.
+    """
+
     try:
         #Pesquisa a localidade na tabela da banco de dados
         response = table.get_item(
@@ -94,6 +133,17 @@ def getLocalidade(localidade):
 
 
 def buildResponse(statusCode, body=None):
+    """
+    Constrói um dicionário contendo informações sobre a resposta HTTP que será enviada.
+
+    Args:
+    - statusCode: int indicando o código de status HTTP da resposta.
+    - body: opcional. Objeto que será serializado para JSON e adicionado ao corpo da resposta.
+
+    Returns:
+    - response: dict contendo o status code HTTP, os headers da resposta e o body (se fornecido).
+    """
+    
     response = {
         'statusCode': statusCode,
         'headers': {

@@ -7,6 +7,15 @@ import sys
 import codecs
 
 def searchPlace(localidade):
+    """
+    Pesquisa o endereço e as coordenadas de uma localidade usando uma API externa.
+
+    Args:
+    localidade: o nome ou endereço da localidade a ser pesquisada
+
+    Returns:
+    - Uma tupla com o endereço, latitude e longitude da localidade pesquisada, ou None se a pesquisa falhar.
+    """
 
     #Chave da API
     api_key = #Cole sua chave da API aqui

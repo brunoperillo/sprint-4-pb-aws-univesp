@@ -102,6 +102,11 @@ O Projeto foi desenvolvido na plataforma da [AWS](https://aws.amazon.com/) com a
         * Este teste também pode ser realizado utilizando o software [Postman](https://www.postman.com/) da seguinte forma: adicione a `URL` como na imagem abaixo, utilizando o método `GET`.
         ![Arquitetura](readme-images/postman.PNG)
 
+    * ### Testar na webpage
+        * Baixe este respositório e inicie a aplicação com `node app.js`.
+
+        ![WebPage Consulta CEP](readme-images/webpage.PNG)
+
 - ## Dificuldades apresentadas
     * Utilização da plataforma AWS (pouco intuitiva);
     * Relacionamento entre API Gateway, Função Lambda e DynamoDB.

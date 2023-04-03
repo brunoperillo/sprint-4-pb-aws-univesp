@@ -91,14 +91,7 @@ O Projeto foi desenvolvido na plataforma da [AWS](https://aws.amazon.com/) com a
 
     * ###### Testar com API Gateway
         * Localize a sua API Gateway e na coluna Recursos, escolha o método ```GET ``` e no painel de execução, na caixa cliente e escolha ```Testar```;
-        * No painel método de teste, escreva o JSON 
-        ```json
-        
-        
-        
-        
-        ```
-        e escolha ```testar```, depois vá até sua tabela do DynomoDB e veja se estar funcionando;
+        * No painel método de teste, escreva o JSON e escolha ```testar```, depois vá até sua tabela do DynomoDB e veja se estar funcionando;
         
               
                

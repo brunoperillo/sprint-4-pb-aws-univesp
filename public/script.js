@@ -29,7 +29,7 @@ button.addEventListener("click", function(){
       jsonObject = JSON.parse(data)
             
       //Retorno para o HTML  
-      if (dataBase = true){
+      if (dataBase == true){
         result_cep.textContent = `O CEP se encontra no banco de dados. Ele pertence à ${jsonObject["logradouro"]}, cidade de ${jsonObject["cidade"]}, estado ${jsonObject["estado"]}.`
       }else{
         result_cep.textContent = `O CEP não se encontra no banco de dados. Ele pertence à ${jsonObject["logradouro"]}, cidade de ${jsonObject["cidade"]}, estado ${jsonObject["estado"]}.`
